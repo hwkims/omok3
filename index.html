@@ -17,6 +17,38 @@ canvas{
     margin: 12px 290px;
     font-style:initial;
 }
+ 
+
+label {
+  position: relative;
+}
+
+input[type="radio"] {
+opacity: 0.5;
+  position: absolute;
+  top: -6px;
+  left: -4px;
+  width: 20px; /* adjust the width to your desired size */
+  height: 20px; /* adjust the height to your desired size */
+  transform: scale(1.2); /* optional: scale the radio button up */
+}
+
+img {
+  position: relative;
+  z-index: -1;
+}
+
+body{
+    position: relative;
+}
+#stone-selector{
+ position: absolute;
+ top: 280px;
+ left: 400px;
+ line-height: 2.5;
+ letter-spacing: 10px;
+}
+
     </style>
 </head>
 <body onload='main()'>
@@ -53,5 +85,76 @@ canvas{
     
     countdown();
     </script>
+
+<div id="stone-selector">
+    <label>
+      <input type="radio" name="black-stone" value="Etc_3328" checked>
+      <img src="Etc_3328.png" alt="Etc_3328">
+    </label>
+    <label>
+      <input type="radio" name="black-stone" value="Etc_3329">
+      <img src="Etc_3329.png" alt="Etc_3329">
+    </label>
+    <label>
+      <input type="radio" name="black-stone" value="Etc_3338">
+      <img src="Etc_3338.png" alt="Etc_3338">
+    </label>
+    <label>
+      <input type="radio" name="black-stone" value="Etc_3339">
+      <img src="Etc_3339.png" alt="Etc_3339">
+    </label>
+    <label>
+      <input type="radio" name="black-stone" value="Etc_3341">
+      <img src="Etc_3341.png" alt="Etc_3341">
+    </label>
+    <label>
+      <input type="radio" name="black-stone" value="Etc_3342">
+      <img src="Etc_3342.png" alt="Etc_3342">
+    </label>
+    <label>
+      <input type="radio" name="black-stone" value="Etc_3343">
+      <img src="Etc_3343.png" alt="Etc_3343">
+    </label>
+    <label>
+      <input type="radio" name="black-stone" value="Etc_3344">
+      <img src="Etc_3344.png" alt="Etc_3344">
+    </label>
+  
+    <br>
+  
+    <label>
+      <input type="radio" name="white-stone" value="Etc_3328">
+      <img src="Etc_3328.png" alt="Etc_3328">
+    </label>
+    <label>
+      <input type="radio" name="white-stone" value="Etc_3329" checked>
+      <img src="Etc_3329.png" alt="Etc_3329">
+    </label>
+    <label>
+      <input type="radio" name="white-stone" value="Etc_3338">
+      <img src="Etc_3338.png" alt="Etc_3338">
+    </label>
+    <label>
+      <input type="radio" name="white-stone" value="Etc_3339">
+      <img src="Etc_3339.png" alt="Etc_3339">
+    </label>
+    <label>
+      <input type="radio" name="white-stone" value="Etc_3341">
+      <img src="Etc_3341.png" alt="Etc_3341">
+    </label>
+    <label>
+      <input type="radio" name="white-stone" value="Etc_3342">
+      <img src="Etc_3342.png" alt="Etc_3342">
+    </label>
+    <label>
+      <input type="radio" name="white-stone" value="Etc_3343">
+      <img src="Etc_3343.png" alt="Etc_3343">
+    </label>
+    <label>
+      <input type="radio" name="white-stone" value="Etc_3344">
+      <img src="Etc_3344.png" alt="Etc_3344">
+    </label>
+  </div>
+
 </body>
 </html>

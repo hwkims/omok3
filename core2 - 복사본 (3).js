@@ -121,23 +121,19 @@ function drawStoneMap()
 	ctx.stroke();
 }
 
+// Modify the drawStone function to use the selected images
 function drawStone(type, x, y) {
 	var cssms = canvasSize / stoneMapSize;
 	var img = new Image();
-	var blackStoneImage = document.querySelector('input[name="black-stone"]:checked').value;
-	var whiteStoneImage = document.querySelector('input[name="white-stone"]:checked').value;
-  
+	var blackStoneImage = document.getElementById("black-stone-select").value;
+	var whiteStoneImage = document.getElementById("white-stone-select").value;
 	if (type == 1) {
 	  img.src = blackStoneImage + '.png'; // use the selected image for black stones
 	} else if (type == 2) {
 	  img.src = whiteStoneImage + '.png'; // use the selected image for white stones
 	}
-  
-	ctx.imageSmoothingEnabled = false;
-	  ctx.drawImage(img, cssms * x, cssms * y, img.width, img.height);
-
+	ctx.drawImage(img, cssms * x, cssms * y, cssms, cssms);
   }
-
 function stoneMapToArray()
 {
 	var t,arr=[];

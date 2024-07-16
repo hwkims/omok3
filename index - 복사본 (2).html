@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+<head>
+    <style>
+
+        body{
+            background: url("omok.png") no-repeat;
+        }
+canvas{
+ margin-top: 15px;
+    margin-left: 10px; 
+}
+
+
+.sale_floating_time{
+    font-size: 14px;
+    margin: 12px 290px;
+    font-style:initial;
+}
+    </style>
+</head>
+<body onload='main()'>
+
+<canvas id='canvas'></canvas>
+
+<script src='core2.js'></script>
+
+
+<div class="sale_floating_time" id="sale_floating_time"><em>00<span>:</span>00<span>:</span>00<span>:</span>00</em></div>
+
+  <script>
+    const saleFloatingTime = document.getElementById('sale_floating_time');
+    const countdownTime = 36000000; // 1 hour in milliseconds
+    let startTime = new Date().getTime();
+    let endTime = startTime + countdownTime;
+    
+    function countdown() {
+      const currentTime = new Date().getTime();
+      const timeLeft = endTime - currentTime;
+      const hours = Math.floor(timeLeft / 3600000);
+      const minutes = Math.floor((timeLeft % 3600000) / 60000);
+      const seconds = Math.floor((timeLeft % 60000) / 1000);
+      const milliseconds = timeLeft % 1000;
+    
+      saleFloatingTime.innerHTML = `<em>${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}:${milliseconds.toString().padStart(3, '0')}</em>`;
+    
+      if (timeLeft <= 0) {
+        saleFloatingTime.innerHTML = '시간이 만료되었습니다.';
+      } else {
+        setTimeout(countdown, 10);
+      }
+    }
+    
+    countdown();
+    </script>
+
+<select id="black-stone-select">
+    <option value="Etc_3328">Etc_3328</option>
+    <option value="Etc_3329">Etc_3329</option>
+    <option value="Etc_3338">Etc_3338</option>
+    <option value="Etc_3339">Etc_3339</option>
+    <option value="Etc_3341">Etc_3341</option>
+    <option value="Etc_3342">Etc_3342</option>
+    <option value="Etc_3343">Etc_3343</option>
+    <option value="Etc_3344">Etc_3344</option>
+  </select>
+  
+  <select id="white-stone-select">
+    <option value="Etc_3328">Etc_3328</option>
+    <option value="Etc_3329">Etc_3329</option>
+    <option value="Etc_3338">Etc_3338</option>
+    <option value="Etc_3339">Etc_3339</option>
+    <option value="Etc_3341">Etc_3341</option>
+    <option value="Etc_3342">Etc_3342</option>
+    <option value="Etc_3343">Etc_3343</option>
+    <option value="Etc_3344">Etc_3344</option>
+  </select>
+</body>
+</html>
