@@ -49,7 +49,12 @@ body{
  letter-spacing: 10px;
 }
 
- 
+#selected-stone {
+  position: absolute;
+  top: 200px; /* Adjust vertical position */
+  left: 406px; /* Adjust horizontal position */
+  letter-spacing: 56px;
+}
     </style>
 </head>
 <body onload='main()'>
@@ -86,6 +91,9 @@ body{
     
     countdown();
     </script>
+
+  <div id="selected-stone">
+  </div>
 
 <div id="stone-selector">
     <label>
@@ -156,6 +164,32 @@ body{
       <img src="Etc_3344.png" alt="Etc_3344">
     </label>
   </div>
+
+  <script>
+    // Get references to the radio buttons and the selected-stone div
+    const blackStoneRadios = document.querySelectorAll('input[name="black-stone"]');
+    const whiteStoneRadios = document.querySelectorAll('input[name="white-stone"]');
+    const selectedStoneDiv = document.getElementById('selected-stone');
+  
+    // Function to update the selected stone display
+    function updateSelectedStone() {
+      let selectedBlackStone = document.querySelector('input[name="black-stone"]:checked').value;
+      let selectedWhiteStone = document.querySelector('input[name="white-stone"]:checked').value;
+  
+      selectedStoneDiv.innerHTML = `
+        <img src="${selectedBlackStone}.png" alt="${selectedBlackStone}">
+        <img src="${selectedWhiteStone}.png" alt="${selectedWhiteStone}">
+      `;
+    }
+  
+    // Add event listeners to the radio buttons
+    blackStoneRadios.forEach(radio => radio.addEventListener('change', updateSelectedStone));
+    whiteStoneRadios.forEach(radio => radio.addEventListener('change', updateSelectedStone));
+  
+    // Call updateSelectedStone initially to display the default stones
+    updateSelectedStone();
+  </script>
+
 
 </body>
 </html>
